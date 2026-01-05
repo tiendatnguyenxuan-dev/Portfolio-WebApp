@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/sheet"
 
 export default function Header() {
-    const [isScroll, setIsScroll] = useState(true)
+    const [isScroll, setIsScroll] = useState(false)
     const [currentTime, setCurrentTime] = useState<Date>(new Date())
 
     const { scrollY } = useScroll()
@@ -39,7 +39,6 @@ export default function Header() {
         }
     })
 
-
     return (
         <>
             <motion.header
@@ -60,7 +59,7 @@ export default function Header() {
                     zIndex: 50,
                     width: "auto",
                     maxWidth: isScroll ? "min(95%, 1400px)" : "100%",
-                    minWidth: isScroll ? "min(85%, 320px)" : "100%",
+                    minWidth: isScroll ? "min(92%, 1000px)" : "100%",
                 }}
                 transition={{ 
                     duration: 0.4, 
@@ -81,7 +80,7 @@ export default function Header() {
                 </div>
 
                 {/* Center - Logo/Title */}
-                <div className="lg:flex-1 flex justify-center">
+                <div className="lg:flex-1 flex justify-center font-heading">
                     <Logo />
                 </div>
 
@@ -101,7 +100,7 @@ export default function Header() {
                             </SheetTrigger>
                             <SheetContent side="right" className="w-[280px]">
                                 <SheetHeader>
-                                    <SheetTitle>
+                                    <SheetTitle className="font-heading">
                                         <Logo />
                                     </SheetTitle>
                                 </SheetHeader>
