@@ -1,6 +1,6 @@
 export const NAV_ITEMS = [
     {
-        href: "/",
+        href: "#home",
         label: "Home"
     },
     {

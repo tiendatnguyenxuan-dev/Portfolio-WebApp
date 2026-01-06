@@ -48,6 +48,13 @@ export default function Header() {
                     borderColor: isScroll ? "var(--glass-border)" : "var(--glass-border-transparent)",
                     borderRadius: isScroll ? "9999px" : "0px",
                     top: isScroll ? "0.75rem" : "0rem",
+                    maxWidth: isScroll ? "min(95%, 1200px)" : "100%",
+                    paddingLeft: isScroll 
+                        ? (isMobile ? "1.5rem" : "2.5rem") 
+                        : (isMobile ? "1rem" : "2rem"),
+                    paddingRight: isScroll 
+                        ? (isMobile ? "1.5rem" : "2.5rem") 
+                        : (isMobile ? "1rem" : "2rem"),
                     boxShadow: isScroll 
                         ? "0 4px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset" 
                         : "none",
@@ -57,17 +64,14 @@ export default function Header() {
                     left: "50%",
                     x: "-50%",
                     zIndex: 50,
-                    width: "auto",
-                    maxWidth: isScroll ? "min(95%, 1400px)" : "100%",
-                    minWidth: isScroll ? "min(92%, 1000px)" : "100%",
+                    width: "100%",
                 }}
                 transition={{ 
-                    duration: 0.4, 
-                    ease: [0.25, 0.1, 0.25, 1] 
+                    duration: 0.5, 
+                    ease: [0.32, 0.72, 0, 1], // Fluid spring-like bezier
                 }}
                 className={cn(
-                    "flex items-center justify-between py-3 md:py-4",
-                    isScroll ? "px-6 md:px-10 gap-6 md:gap-10" : "px-4 md:px-8 gap-4",
+                    "flex items-center justify-between py-3 md:py-4 gap-4 md:gap-8",
                     !isScroll && "border-transparent"
                 )}
             >

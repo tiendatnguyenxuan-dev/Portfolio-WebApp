@@ -6,28 +6,9 @@ import { ArrowDown, Mail } from 'lucide-react'
 import { SiGithub } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 
-export default function Hero() {
+export default function HeroSection() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background selection:bg-primary/20">
-            {/* 1. Technical Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-
-            {/* 2. Ambient Glow Effects */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.4 }}
-                    transition={{ duration: 2 }}
-                    className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] rounded-full bg-primary/20 blur-[120px]"
-                />
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.3 }}
-                    transition={{ duration: 2, delay: 0.5 }}
-                    className="absolute top-[20%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-chart-4/10 blur-[100px]"
-                />
-            </div>
-
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden selection:bg-primary/20">
             {/* Main Content */}
             <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20">
                 <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
