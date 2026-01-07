@@ -29,7 +29,7 @@ export function ProjectsSection() {
                                 {PROJECTS_DATA.description}
                             </p>
                             <Button variant="outline" className="rounded-full group hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all font-medium" asChild>
-                                <Link href="https://github.com" target="_blank">
+                                <Link href={PROJECTS_DATA.links.github} target="_blank">
                                     View Github <SiGithub className="ml-2 size-4 group-hover:rotate-12 transition-transform" />
                                 </Link>
                             </Button>
@@ -74,7 +74,7 @@ export function ProjectsSection() {
                                         
                                         <div className="flex flex-wrap gap-2 mb-8">
                                             {project.tags.map(tag => (
-                                                <Badge key={tag} variant="secondary" className="px-3 py-1">
+                                                <Badge key={tag} variant="glass" className="px-3 py-1">
                                                     {tag}
                                                 </Badge>
                                             ))}

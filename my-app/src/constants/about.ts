@@ -1,26 +1,34 @@
-import { Cpu, Globe } from "lucide-react"
+import { GraduationCap, Code2, Target } from "lucide-react"
 
 export const ABOUT_DATA = {
-    intro: "Explaining my journey, technical capabilities, and what drives me as a developer.",
+    intro: "Senior Computer Science Student at International University (VNU-HCM).",
     story: {
         imagePlaceholder: "Profile Image",
         paragraphs: [
-            "I am a maker at heart. Whether it's code, design, or mechanics, I love understanding how things work and how to make them better.",
-            "Starting with a curiosity for how websites were built, I dove headfirst into the world of web development. Over the years, I've cultivated a deep appreciation for clean code, intuitive user interfaces, and seamless performance."
+            "I am Nguyen Viet Anh Khoa, a Senior Computer Science student at International University, specializing in Full-Stack Development. My academic journey has built a rock-solid foundation in Object-Oriented Programming (OOP), Data Structures & Algorithms (DSA), and Design Patterns.",
+            "Beyond theory, I am passionate about building scalable, high-quality software. I combine my academic solidity with practical, industry-ready skills in Spring Boot and Next.js to deliver robust backends and high-performance frontends."
         ]
     },
     cards: [
         {
-            icon: Cpu,
-            title: "Technical",
-            description: "Obsessed with performance optimization, clean architecture, and type safety. I treat code quality as a first-class citizen.",
+            icon: GraduationCap,
+            title: "Education",
+            description: "Senior @ International University (Sep 2026). Major in Computer Science.",
             iconColor: "text-primary"
         },
         {
-            icon: Globe,
-            title: "Global Mindset",
-            description: "Built products used by people from over 10 countries. I understand the importance of accessibility and i18n.",
+            icon: Target,
+            title: "Objective",
+            description: "Seeking an internship to learn from senior developers and contribute real value to professional teams.",
             iconColor: "text-chart-4"
+        }
+    ],
+    timeline: [
+        {
+            period: "2022 - Present (Exp. Sep 2026)",
+            role: "Computer Science",
+            institution: "International University - VNU HCM",
+            description: "Coursework: OOP, Data Structures & Algorithms, Database Systems, Web Application Development, Software Architecture."
         }
     ]
 }

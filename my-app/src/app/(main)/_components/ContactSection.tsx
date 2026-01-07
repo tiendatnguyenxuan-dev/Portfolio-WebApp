@@ -27,7 +27,6 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>
 
 export function ContactSection() {
-    const [copied, setCopied] = useState(false)
     const [isPending, startTransition] = useTransition()
     
     const { control, handleSubmit, reset } = useForm<ContactFormValues>({
@@ -52,11 +51,7 @@ export function ContactSection() {
         })
     }
 
-    const onCopyEmail = () => {
-        navigator.clipboard.writeText(CONTACT_DATA.details[0].value)
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
-    }
+
 
     return (
         <section id="contact" className="container mx-auto px-4 md:px-8 relative z-10 min-h-screen flex flex-col justify-center pt-24 pb-24">
@@ -67,11 +62,10 @@ export function ContactSection() {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.5 }}
                         >
                             <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-                                {CONTACT_DATA.title.line1} <br /> <span className="text-primary">{CONTACT_DATA.title.line2}</span>
+                                Get In <br /> <span className="text-primary">Touch.</span>
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-xs">
                                 {CONTACT_DATA.description}
@@ -101,15 +95,15 @@ export function ContactSection() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5 }}
                     >
                         <h2 className="font-heading text-3xl font-bold text-foreground flex items-center gap-3 mb-8">
                             <span className="text-primary text-sm font-mono tracking-widest uppercase mb-1">
-                                {CONTACT_DATA.header.number} {CONTACT_DATA.header.text}
+                                05. What&apos;s Next?
                             </span>
                         </h2>
 
-                        <Card variant="glass" className="overflow-hidden">
+                        <Card variant="glass" className="overflow-hidden border-primary/20 shadow-2xl shadow-primary/5">
                             <CardContent className="p-6 md:p-10">
                                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -180,19 +174,8 @@ export function ContactSection() {
                                         )}
                                     />
 
-                                    <div className="flex items-center justify-between pt-4">
-                                        <Button 
-                                            type="button" 
-                                            variant="secondary" 
-                                            size="sm"
-                                            onClick={onCopyEmail}
-                                            className="text-muted-foreground hover:text-foreground"
-                                        >
-                                            {copied ? <Check className="mr-2 size-4" /> : <Copy className="mr-2 size-4" />}
-                                            {copied ? "Copied" : "Copy Email"}
-                                        </Button>
-
-                                        <Button type="submit" size="lg" className="rounded-full px-8" disabled={isPending}>
+                                    <div className="pt-4">
+                                        <Button type="submit" size="lg" className="w-full rounded-full text-base font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40" disabled={isPending}>
                                             {isPending ? "Sending..." : "Send Message"} <Send className="ml-2 size-4" />
                                         </Button>
                                     </div>

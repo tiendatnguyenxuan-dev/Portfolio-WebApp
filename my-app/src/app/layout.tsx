@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, ToastContainer } from 'react-toastify';
+import { ThemeProvider } from "@/components/theme-provider";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
@@ -34,7 +35,13 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider 
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
         <ToastContainer
           position="bottom-right"
           autoClose={3000}

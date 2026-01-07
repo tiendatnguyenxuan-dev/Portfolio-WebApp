@@ -32,7 +32,7 @@ export function AboutSection() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5 }}
                         className="prose prose-lg dark:prose-invert"
                     >
                         <h2 className="font-heading text-3xl font-bold text-foreground flex items-center gap-3 mb-8">

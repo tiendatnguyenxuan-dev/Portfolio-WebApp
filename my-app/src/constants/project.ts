@@ -1,35 +1,32 @@
 export const PROJECTS_DATA = {
-    description: "Selected works that showcase my passion for building robust and scalable applications.",
+    title: {
+        line1: "Featured",
+        line2: "Projects."
+    },
+    links: {
+        github: "https://github.com/anhkhoa13-dev",
+    },
+    description: "Real-world solutions demonstrating full-stack expertise, system architecture, and product thinking.",
     projects: [
         {
-            title: "E-Commerce Platform",
-            description: "A modern headless e-commerce solution built with Next.js 14, Stripe Connect, and Sanity CMS. Features real-time inventory, drag-and-drop admin interface, and AI-powered recommendations.",
-            tags: ["Next.js", "TypeScript", "Stripe", "Zustand"],
+            title: "Bus Booking & Management System",
+            description: "A comprehensive web app for searching routes, booking tickets, and managing schedules. Features RESTful APIs, VNPay integration, and an E2E admin dashboard with multi-criteria filtering.",
+            tags: ["Spring Boot", "Next.js", "VNPay", "Tailwind CSS"],
             links: {
-                demo: "https://demo.com",
-                github: "https://github.com"
+                demo: "#", 
+                github: "https://github.com/tiendat1631/booking_springboot/tree/main"
             },
-            image: "bg-chart-1/10" // Placeholder
+            image: "bg-blue-900/10" 
         },
         {
-            title: "SaaS Dashboard",
-            description: "Analytics dashboard for social media management. Includes drag-and-drop calendar, real-time data visualization with Recharts, and automated reporting system.",
-            tags: ["React", "Tailwind", "PostgreSQL", "Prisma"],
+            title: "AI-Powered Crypto Trading Platform",
+            description: "Full-stack trading platform with real-time market data, AI bots, and automated trade execution. Optimized with Next.js SSR, secure NextAuth session management, and interactive TradingView widgets.",
+            tags: ["Next.js (SSR)", "Auth.js", "TradingView", "AI Bots"],
             links: {
-                demo: "https://demo.com",
-                github: "https://github.com"
+                demo: "https://coinsantra.vercel.app/",
+                github: "https://github.com/anhkhoa13-dev/Trade_Web_App"
             },
-            image: "bg-chart-2/10"
-        },
-        {
-            title: "AI Content Generator",
-            description: "Next.js application leveraging OpenAI API to help creators generate blog posts, social media captions, and SEO-optimized articles in seconds.",
-            tags: ["OpenAI", "Next.js", "Radix UI", "Vercel SDK"],
-            links: {
-                demo: "https://demo.com",
-                github: "https://github.com"
-            },
-            image: "bg-chart-3/10"
+            image: "bg-emerald-900/10"
         }
     ]
 }

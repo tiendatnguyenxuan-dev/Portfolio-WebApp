@@ -6,11 +6,13 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react"
 import { cn, formatDate, formatTime } from "@/lib/utils"
 import NavMenu from "./NavigationMenu"
 import Logo from "./Logo"
-import { Menu } from "lucide-react"
+import { Menu, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/mode-toggle"
 import {
     Sheet,
     SheetContent,
+    SheetFooter,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
@@ -102,23 +104,41 @@ export default function Header() {
                                     <Menu size={20} />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="right" className="w-[280px]">
-                                <SheetHeader>
+                            <SheetContent side="right" className="w-[300px] border-l border-primary/20 bg-background/80 backdrop-blur-3xl shadow-2xl shadow-primary/10 p-6 sm:max-w-sm">
+                                <SheetHeader className="mb-8 text-left">
                                     <SheetTitle className="font-heading">
                                         <Logo />
                                     </SheetTitle>
                                 </SheetHeader>
-                                <div>
-                                    <NavMenu />
+                                
+                                <div className="flex flex-col h-[calc(100vh-8rem)]">
+                                    <div className="flex flex-col gap-2 items-center">
+                                        <NavMenu />
+                                    </div>
                                 </div>
+                                {/* Appearance Toggle Footer */}
+                                <SheetFooter className="mt-auto pt-6 border-t border-primary/10 p-0 sm:justify-between">
+                                    <div className="flex items-center justify-between w-full">
+                                        <div className="flex flex-col gap-1 text-left">
+                                            <span className="font-medium text-sm text-foreground">Theme</span>
+                                            <span className="text-xs text-muted-foreground">Adjust appearance</span>
+                                        </div>
+                                        <ModeToggle />
+                                    </div>
+                                </SheetFooter>
                             </SheetContent>
                         </Sheet>
                     ) : (
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
+                            className="flex items-center gap-4"
                         >
                             <NavMenu />
+                            <Button size="sm" className="rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 hidden md:flex">
+                                Download CV <Download className="ml-2 size-4" />
+                            </Button>
+                            <ModeToggle />
                         </motion.div>
                     )}
                 </div>

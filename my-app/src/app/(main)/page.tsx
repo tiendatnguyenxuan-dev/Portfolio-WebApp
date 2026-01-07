@@ -4,6 +4,7 @@ import { AboutSection } from "./_components/AboutSection"
 import { SkillsSection } from "./_components/SkillsSection";
 import { SectionConnector } from "./_components/SectionConnector";
 import { ProjectsSection } from "./_components/ProjectsSection";
+import { ServicesSection } from "./_components/ServicesSection";
 import { ContactSection } from "./_components/ContactSection";
 
 export default function Home() {
@@ -13,14 +14,15 @@ export default function Home() {
       <GlobalBackground />
       <HeroSection />
       
-      <div className="relative z-10 bg-background">
-        <div className="absolute top-0 left-0 right-0 h-32 -mt-32 bg-linear-to-b from-transparent to-background pointer-events-none" />
+      <div className="relative z-10">
         <AboutSection />
         <SectionConnector variant="right-to-left" />
         <SkillsSection />
         <SectionConnector variant="left-to-right" />
         <ProjectsSection />
         <SectionConnector variant="right-to-left" />
+        <ServicesSection />
+        <SectionConnector variant="left-to-right" />
         <ContactSection />
       </div>
     </main>
