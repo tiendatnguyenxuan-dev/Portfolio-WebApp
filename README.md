@@ -1,60 +1,86 @@
-# My Portfolio Website
+# Portfolio Web App
+
+A modern, high-performance portfolio website built with **Next.js 16**, **React**, and **Tailwind CSS**, featuring a "Deep Dark & Neon" aesthetic.
 
 ## 🌐 Live Website
 
-https://anhkhoa13-dev.github.io/Portfolio-WebApp/
+[anhkhoa13-portfolio.vercel.app](https://anhkhoa13-portfolio.vercel.app/)
 
----
+## 🚀 Tech Stack
 
-## 📌 Site Map
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Architecture**: [Shadcn UI](https://ui.shadcn.com/) (Radix Primitives)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Theming**: `next-themes` with custom OKLCH color tokens.
+- **Icons**: `lucide-react`, `@icons-pack/react-simple-icons`.
 
+## ✨ Features
+
+- **Deep Dark & Neon Theme**: Custom-engineered color palette using OKLCH for vibrant, accessible neon accents on a deep dark background.
+- **Responsive Design**: Fully responsive layout with mobile-first approach, featuring a custom Glassmorphism Sheet Menu for mobile navigation.
+- **Interactive Hero Section**: Split layout with a "Floating Code Card" visual that animates syntax-highlighted profile data.
+- **Dynamic Content**: Data-driven components (Hero, About, Projects, Services) powered by centralized constants for easy maintenance.
+- **Modern UI Components**:
+  - **Glass Cards**: Translucent cards with neon glow effects.
+  - **Timeline**: Vertical education pathway visualization.
+  - **Theme Toggle**: Custom animated sun/moon toggle with neon glow.
+
+## � Project Structure
+
+```bash
+src/
+├── app/                  # Next.js App Router
+│   ├── (main)/           # Main layout group
+│   │   ├── _components/  # Page-specific components (Hero, About, etc.)
+│   │   └── page.tsx      # Landing page
+│   ├── globals.css       # Global styles & Tailwind variables
+│   └── layout.tsx        # Root layout with Providers
+├── components/           # Shared UI components
+│   ├── ui/               # Shadcn primitives (Button, Card, Sheet...)
+│   └── mode-toggle.tsx   # Theme switcher
+├── constants/            # Centralized data files
+│   ├── hero.ts           
+│   ├── about.ts
+│   ├── project.ts
+│   └── service.ts
+└── lib/                  # Utilities (clsx, twMerge)
 ```
-index.html       → Home Page
-about.html       → About Me
-projects.html    → Projects Showcase
-gallery.html     → Gallery (Images + YouTube iframe)
-blog.html        → Blog Listing
-contact.html     → Contact Form (Interactive)
-```
+
+## 🛠️ Getting Started
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/anhkhoa13-dev/Portfolio-WebApp.git
+    cd Portfolio-WebApp
+    ```
+
+2. **Install dependencies**:
+
+    ```bash
+    pnpm install
+    # or
+    npm install
+    ```
+
+3. **Run the development server**:
+
+    ```bash
+    pnpm run dev
+    # or
+    npm run dev
+    ```
+
+4. **Open your browser**:
+    Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+
+## 📬 Contact
+
+- **Email**: [contact@example.com](mailto:contact@example.com)
+- **GitHub**: [anhkhoa13-dev](https://github.com/anhkhoa13-dev)
 
 ---
 
-## 🛠️ Features
-
-* ✅ Responsive design using CSS Grid & Flexbox
-* ✅ Full-featured contact form with validation
-* ✅ Gallery with iframe video
-* ✅ Project cards with hover effects
-* ✅ Blog section with post previews
-
----
-
-## 📁 Folder Structure
-
-```
-/ (root)
-├─ index.html
-├─ about.html
-├─ projects.html
-├─ gallery.html
-├─ blog.html
-├─ contact.html
-├─ README.md
-└─ assets/
-   ├─ css/style.css
-   └─ img/
-```
-
----
-
-## ✨ Credits
-
-* Template được thiết kế bởi **Anh Khoa**
-* Images & icons: nguồn cá nhân hoặc miễn phí (pexels.com, unsplash.com)
-* Video iframe: https://www.youtube.com/embed/0wBtgrme6PI
----
-
-## 🤖 AI Usage Log
-
-* ChatGPT hỗ trợ trong việc làm trang web đẹp hơn và sửa lỗi
-* Các phần được chỉnh tay lại để phù hợp với phong cách cá nhân
+Built by **Nguyen Viet Anh Khoa**
