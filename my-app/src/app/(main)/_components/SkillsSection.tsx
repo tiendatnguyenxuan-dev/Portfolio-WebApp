@@ -14,7 +14,6 @@ export function SkillsSection() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
                     >
                         <h2 className="font-heading text-3xl font-bold text-foreground flex items-center gap-3 mb-8">
                             <span className="text-primary text-sm font-mono tracking-widest uppercase mb-1">02. Tech Stack</span>
@@ -60,9 +59,8 @@ export function SkillsSection() {
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
                         >
-                            <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6">
+                            <h2 className="font-heading text-5xl md:text-7xl font-bold mb-6">
                                 Technical <br /> <span className="text-primary">Skills.</span>
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed ml-auto max-w-xs">

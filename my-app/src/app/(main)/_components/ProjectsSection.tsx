@@ -19,10 +19,8 @@ export function ProjectsSection() {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.5 }}
                         >
-                            <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6">
+                            <h2 className="font-heading text-5xl md:text-7xl font-bold mb-6">
                                 Featured <br /> <span className="text-primary">Projects.</span>
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-xs">
@@ -42,7 +40,6 @@ export function ProjectsSection() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
                     >
                         <h2 className="font-heading text-3xl font-bold text-foreground flex items-center gap-3">
                             <span className="text-primary text-sm font-mono tracking-widest uppercase mb-1">03. My Works</span>

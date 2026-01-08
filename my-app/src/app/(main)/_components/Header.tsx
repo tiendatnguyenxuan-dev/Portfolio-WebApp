@@ -10,13 +10,13 @@ import { Menu, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import {
-    Sheet,
-    SheetContent,
-    SheetFooter,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "@/components/ui/sheet"
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { NAV_ITEMS } from "@/constants/navigation"
+import Link from "next/link"
 
 export default function Header() {
     const [isScroll, setIsScroll] = useState(false)
@@ -93,8 +93,8 @@ export default function Header() {
                 {/* Right - Navigation (Desktop) or Menu Button (Mobile) */}
                 <div className="flex-1 flex justify-end">
                     {isMobile ? (
-                        <Sheet>
-                            <SheetTrigger asChild>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
                                 <Button 
                                     variant="ghost" 
                                     size="icon"
@@ -103,21 +103,24 @@ export default function Header() {
                                 >
                                     <Menu size={20} />
                                 </Button>
-                            </SheetTrigger>
-                            <SheetContent side="right" className="w-[300px] border-l border-primary/20 bg-background/80 backdrop-blur-3xl shadow-2xl shadow-primary/10 p-6 sm:max-w-sm">
-                                <SheetHeader className="mb-8 text-left">
-                                    <SheetTitle className="font-heading">
-                                        <Logo />
-                                    </SheetTitle>
-                                </SheetHeader>
-                                
-                                <div className="flex flex-col h-[calc(100vh-8rem)]">
-                                    <div className="flex flex-col gap-2 items-center">
-                                        <NavMenu />
-                                    </div>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-[300px] border border-primary/20 bg-background/80 backdrop-blur-3xl shadow-2xl shadow-primary/10 p-6 rounded-2xl">
+                                <div className="mb-8 text-left">
+                                    <Logo />
                                 </div>
+                                
+                                <div className="flex flex-col gap-2 mb-8">
+                                    {NAV_ITEMS.map((item, index) => (
+                                        <DropdownMenuItem key={index} asChild className="font-heading text-lg py-3 justify-center focus:bg-primary/10 cursor-pointer rounded-lg hover:text-primary transition-colors">
+                                            <Link href={item.href}>
+                                                {item.label}
+                                            </Link>
+                                        </DropdownMenuItem>
+                                    ))}
+                                </div>
+                                
                                 {/* Appearance Toggle Footer */}
-                                <SheetFooter className="mt-auto pt-6 border-t border-primary/10 p-0 sm:justify-between">
+                                <div className="pt-6 border-t border-primary/10 flex items-center justify-between">
                                     <div className="flex items-center justify-between w-full">
                                         <div className="flex flex-col gap-1 text-left">
                                             <span className="font-medium text-sm text-foreground">Theme</span>
@@ -125,9 +128,9 @@ export default function Header() {
                                         </div>
                                         <ModeToggle />
                                     </div>
-                                </SheetFooter>
-                            </SheetContent>
-                        </Sheet>
+                                </div>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     ) : (
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
