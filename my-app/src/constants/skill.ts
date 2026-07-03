@@ -13,7 +13,7 @@ export const SKILLS_DATA = {
             category: "Backend",
             icon: Database,
             iconClass: "text-chart-2",
-            items: ["Java Spring boot", "ASP.NET"]
+            items: ["Java Spring boot", "ASP.NET", "NestJS "]
         },
         {
             category: "Tools",

@@ -20,12 +20,15 @@ import Link from "next/link"
 
 export default function Header() {
     const [isScroll, setIsScroll] = useState(false)
-    const [currentTime, setCurrentTime] = useState<Date>(new Date())
+    const [currentTime, setCurrentTime] = useState<Date | null>(null)
+    const [mounted, setMounted] = useState(false)
 
     const { scrollY } = useScroll()
     const isMobile = useIsMobile()
 
     useEffect(() => {
+        setMounted(true)
+        setCurrentTime(new Date())
         const timer = setInterval(() => {
             setCurrentTime(new Date())
         }, 1000)
@@ -73,16 +76,18 @@ export default function Header() {
                     ease: [0.32, 0.72, 0, 1], // Fluid spring-like bezier
                 }}
                 className={cn(
-                    "flex items-center justify-between py-3 md:py-4 gap-4 md:gap-8",
+                    "flex items-center justify-between py-3 md:py-4 gap-4 md:gap-8 border",
                     !isScroll && "border-transparent"
                 )}
             >
                 {/* Left - DateTime (hidden on mobile/tablet) */}
-                <div className="flex-1 hidden lg:flex">
-                    <div className="flex flex-col text-xs md:text-sm font-mono whitespace-nowrap">
-                        <span className="font-medium">{formatTime(currentTime)}</span>
-                        <span className="text-[10px] md:text-xs">{formatDate(currentTime)}</span>
-                    </div>
+                <div className="flex-1 hidden lg:flex min-h-[40px]">
+                    {mounted && currentTime && (
+                        <div className="flex flex-col text-xs md:text-sm font-mono whitespace-nowrap">
+                            <span className="font-medium">{formatTime(currentTime)}</span>
+                            <span className="text-[10px] md:text-xs">{formatDate(currentTime)}</span>
+                        </div>
+                    )}
                 </div>
 
                 {/* Center - Logo/Title */}
@@ -138,8 +143,10 @@ export default function Header() {
                             className="flex items-center gap-4"
                         >
                             <NavMenu />
-                            <Button size="sm" className="rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 hidden md:flex">
-                                Download CV <Download className="ml-2 size-4" />
+                            <Button size="sm" className="rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 hidden md:flex" asChild>
+                                <a href="/NguyenXuanTienDat_Software.pdf" download="NguyenXuanTienDat_Software.pdf">
+                                    Download CV <Download className="ml-2 size-4" />
+                                </a>
                             </Button>
                             <ModeToggle />
                         </motion.div>

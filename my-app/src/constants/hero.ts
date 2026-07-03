@@ -7,25 +7,30 @@ export const HERO_DATA = {
     },
     bio: {
         greeting: "Hi, I'm",
-        name: "Nguyen Viet Anh Khoa",
+        name: "Nguyen Xuan Tien Dat",
         description: "A Full-Stack Developer transforming ideas into high-performance web applications."
     },
     links: {
         projects: "#projects",
         contact: "#contact",
-        github: "https://github.com/anhkhoa13-dev",
-        email: "mailto:itcsiu22278@student.hcmiu.edu.vn"
+        github: "https://github.com/tiendatnguyenxuan-dev",
+        email: "mailto:tiendatnguyenxuan1607@gmail.com"
     },
     codeSnippet: {
         variable: "developer",
         data: {
-            name: "Nguyen Viet Anh Khoa",
+            name: "Nguyen Xuan Tien Dat",
             role: "Full-Stack Developer",
             skills: [
-                "Next.js",
-                "React",
+                "Java",
                 "Spring Boot",
-                "Java"
+                "React",
+                "Next.js",
+                "PostgreSQL",
+                "MySQL",
+                "MongoDB",
+                "C#",
+                "NextJS"
             ],
             status: "Available for work"
         }

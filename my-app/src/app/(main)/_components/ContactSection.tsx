@@ -7,14 +7,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldLabel, FieldError } from "@/components/ui/field"
-import { Send, Copy, Check } from "lucide-react"
-import { useState } from "react"
+import { Send } from "lucide-react"
+import { useTransition } from "react"
 import { useForm, Controller } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 
 import { submitContactForm } from "@/actions/contact"
-import { useTransition } from "react"
 import { toast } from "react-toastify"
 
 const contactSchema = z.object({

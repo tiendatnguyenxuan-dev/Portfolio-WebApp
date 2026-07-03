@@ -4,7 +4,7 @@ export const PROJECTS_DATA = {
         line2: "Projects."
     },
     links: {
-        github: "https://github.com/anhkhoa13-dev",
+        github: "https://github.com/tiendatnguyenxuan-dev",
     },
     description: "Real-world solutions demonstrating full-stack expertise, system architecture, and product thinking.",
     projects: [
@@ -13,18 +13,28 @@ export const PROJECTS_DATA = {
             description: "A comprehensive web app for searching routes, booking tickets, and managing schedules. Features RESTful APIs, VNPay integration, and an E2E admin dashboard with multi-criteria filtering.",
             tags: ["Spring Boot", "Next.js", "VNPay", "Tailwind CSS"],
             links: {
-                demo: "#", 
+                demo: "#",
                 github: "https://github.com/tiendat1631/booking_springboot/tree/main"
             },
-            image: "bg-blue-900/10" 
+            image: "bg-blue-900/10"
         },
         {
-            title: "AI-Powered Crypto Trading Platform",
-            description: "Full-stack trading platform with real-time market data, AI bots, and automated trade execution. Optimized with Next.js SSR, secure NextAuth session management, and interactive TradingView widgets.",
-            tags: ["Next.js (SSR)", "Auth.js", "TradingView", "AI Bots"],
+            title: "AI-Trip Planner",
+            description: "Full-stack web app for generating travel itineraries and suggestions using large language models.",
+            tags: [],
             links: {
-                demo: "https://coinsantra.vercel.app/",
-                github: "https://github.com/anhkhoa13-dev/Trade_Web_App"
+                demo: "https://ai-trip-planner-dun-psi.vercel.app/",
+                github: "https://github.com/tiendatnguyenxuan-dev/AI-Trip-Planner"
+            },
+            image: "bg-emerald-900/10"
+        },
+        {
+            title: "Drone Delivery System",
+            description: "Full-stack web app for delivey system using microservice architecture.",
+            tags: [""],
+            links: {
+                demo: "#",
+                github: "https://github.com/foodfast-delivery-microservice/FastfoodDelivery-microservice-monorepo"
             },
             image: "bg-emerald-900/10"
         }

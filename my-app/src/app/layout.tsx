@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nguyen Viet Anh Khoa | Full-Stack Developer",
-  description: "Portfolio of Nguyen Viet Anh Khoa - A Full-Stack Developer specializing in Next.js, Spring Boot, and modern web solutions.",
+  title: "Nguyen Xuan Tien Dat | Full-Stack Developer",
+  description: "Portfolio of Nguyen Xuan Tien Dat - A Full-Stack Developer specializing in Next.js, Spring Boot, and modern web solutions.",
 };
 
 export default function RootLayout({
@@ -31,11 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${plusJakarta.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider 
+        <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "motion/react"
 import { ABOUT_DATA } from "@/constants/about"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,9 +16,9 @@ export function AboutSection() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                     >
-                        <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
+                        <h2 className="font-heading text-5xl md:text-7xl font-bold mb-6">
                             About <br /> <span className="text-primary">Me.</span>
-                        </h1>
+                        </h2>
                         <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                             {ABOUT_DATA.intro}
                         </p>
@@ -33,15 +34,18 @@ export function AboutSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         className="prose prose-lg dark:prose-invert"
                     >
-                        <h2 className="font-heading text-3xl font-bold text-foreground flex items-center gap-3 mb-8">
-                            <span className="text-primary text-sm font-mono tracking-widest uppercase mb-1">01. The Story</span>
-                        </h2>
+                        <p className="text-primary text-sm font-mono tracking-widest uppercase mb-8">01. The Story</p>
 
                         <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
-                            {/* Image Placeholder */}
+                            {/* Profile Image */}
                             <div className="w-full md:w-1/3 aspect-3/4 rounded-2xl bg-muted/30 border border-border/50 flex items-center justify-center relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                                <span className="text-muted-foreground/50 text-sm font-medium uppercase tracking-widest">{ABOUT_DATA.story.imagePlaceholder}</span>
+                                <Image
+                                    src="/pic1.jpg"
+                                    alt="Profile Image"
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
                             </div>
 
                             {/* Bio Text */}

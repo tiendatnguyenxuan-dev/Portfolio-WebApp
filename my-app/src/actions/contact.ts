@@ -27,7 +27,7 @@ export async function submitContactForm(data: ContactFormValues) {
 
     await resend.emails.send({
       from: "onboarding@resend.dev", 
-      to: "nvakhoi2111@gmail.com",
+      to: "tiendatnguyenxuan1607@gmail.com",
       replyTo: validatedFields.email,
       subject: `[Portfolio Contact] ${validatedFields.subject}`,
       html: `
