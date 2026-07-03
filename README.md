@@ -78,9 +78,6 @@ src/
 
 ## 📬 Contact
 
-- **Email**: [contact@example.com](mailto:contact@example.com)
-- **GitHub**: [anhkhoa13-dev](https://github.com/anhkhoa13-dev)
+- **Email**: [tiendatnguyenxuan1607@gmail.com](mailto:contact@example.com)
+- **GitHub**: [tiendatnguyenxuan-dev](https://github.com/tiendatnguyenxuan-dev)
 
----
-
-Built by **Nguyen Viet Anh Khoa**
